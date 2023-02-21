@@ -11,6 +11,9 @@ const Comment = () => {
                     <button>완료</button>
                 </div>
             </div>
+            <div className='comment-detail'>
+
+            </div>
         </div>
     )
 }
