@@ -11,8 +11,33 @@ const Comment = () => {
                     <button>완료</button>
                 </div>
             </div>
-            <div className='comment-detail'>
 
+            <div className='comment-detail'>
+                <div className='detail-info'>
+                    <div className='writer'>
+                        장재혁
+                    </div>
+                    <div className='date'>
+                        2022.01.02
+                    </div>
+                </div>
+                <div className='content'>
+                    가나다라마바사
+                </div>
+            </div>
+
+            <div className='comment-detail'>
+                <div className='detail-info'>
+                    <div className='writer'>
+                        장재혁
+                    </div>
+                    <div className='date'>
+                        2022.01.02
+                    </div>
+                </div>
+                <div className='content'>
+                    가나다라마바사
+                </div>
             </div>
         </div>
     )
