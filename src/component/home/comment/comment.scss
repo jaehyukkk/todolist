@@ -26,4 +26,21 @@
       }
     }
   }
+
+  .comment-detail:not(:last-child) {
+    border-bottom: 1px dashed #dadada;
+    padding-bottom: 10px;
+  }
+  .comment-detail{
+    margin-top:10px;
+    .detail-info{
+      color:#999;
+      display: flex;
+      justify-content: space-between;
+    }
+    .content{
+      color: #4b4b4b;
+      margin-top:10px;
+    }
+  }
 }
