@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
 import "./contentForm.scss";
 
-const Content = () => {
+const ContentForm = () => {
   const [startDate, setStartDate] = useState(new Date());
   useEffect(() => {
     console.log(startDate);
@@ -52,4 +52,4 @@ const Content = () => {
     </div>
   );
 };
-export default Content;
+export default ContentForm;
