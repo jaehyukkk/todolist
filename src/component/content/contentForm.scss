@@ -1,43 +1,88 @@
-.content-form__wrapper {
-  padding: 10px 0;
-  margin-bottom: 10px;
-  .content-form {
+.content-form__container {
+  .content-form__wrapper {
     display: flex;
-    .content-form__subject {
-      flex-shrink: 0;
-      flex-grow: 1;
-      flex-basis: 0;
+    justify-content: center;
+    padding: 2vh 0;
+    width: 100%;
+    .content-form {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 4vw;
+      width: 80vw;
+      .subject__wrapper {
+        display: flex;
+        height: 6vh;
+        width: 30vw;
+        .content-form__subject {
+          text-align: center;
+          margin: auto;
+          line-height: 6vh;
+          font-size: 1.5rem;
+          height: 6vh;
+          width: 8vw;
+        }
+        input {
+          line-height: 30px;
+          border: 1px solid #dadada;
+          border-radius: 6px;
+          width: 95%;
+          padding: 5px 10px;
+          font-size: 1.5rem;
+        }
+      }
+      .datePicker__wrapper {
+        display: flex;
+        .content-form__startDate {
+          text-align: center;
+          margin: auto;
+          line-height: 6vh;
+          font-size: 1.5rem;
+          height: 6vh;
+          width: 8vw;
+        }
+        .content-form__endDate {
+          text-align: center;
+          margin: auto;
+          line-height: 6vh;
+          font-size: 1.5rem;
+          height: 6vh;
+          width: 8vw;
+        }
+      }
 
-      input {
+      .content {
+        flex-basis: calc(100%);
+        text-align: left;
+        padding: 2vh 6.3vw;
+        input {
+          line-height: 30px;
+          border: 1px solid #dadada;
+          border-radius: 6px;
+          width: 95%;
+          padding: 1vh 1vw;
+          margin-top: 1vw;
+          font-size: 1.5rem;
+        }
+      }
+      button {
         line-height: 30px;
         border: 1px solid #dadada;
         border-radius: 6px;
-        width: 95%;
-        padding: 5px 10px;
+        width: 3.5vw;
+        padding: 1vh 1vw;
+        margin: 1vw;
+        font-size: 1.5rem;
       }
-    }
-    .content-form__startDate {
-      border: 1px solid #dadada;
-      padding: 10px;
-      border-radius: 6px;
-      width: 100px;
-      cursor: pointer;
-    }
-    .content-form__endDate {
-      border: 1px solid #dadada;
-      padding: 10px;
-      border-radius: 6px;
-      width: 100px;
-      cursor: pointer;
-    }
-    .content {
-      background-color: yellow;
-    }
-    .content-form__save {
-      background-color: red;
-    }
-    .content-form__cancel {
-      background-color: blue;
+      .content-form__btn {
+        line-height: 30px;
+        border: 1px solid #dadada;
+        border-radius: 6px;
+        width: 3.5vw;
+        padding: 1vh 1vw;
+        margin: 1vw;
+        font-size: 1.5rem;
+      }
     }
   }
 }
