@@ -33,22 +33,11 @@
     .content {
       background-color: yellow;
     }
-  }
-
-  .comment-detail:not(:last-child) {
-    border-bottom: 1px dashed #dadada;
-    padding-bottom: 10px;
-  }
-  .comment-detail {
-    margin-top: 10px;
-    .detail-info {
-      color: #999;
-      display: flex;
-      justify-content: space-between;
+    .content-form__save {
+      background-color: red;
     }
-    .content {
-      color: #4b4b4b;
-      margin-top: 10px;
+    .content-form__cancel {
+      background-color: blue;
     }
   }
 }
