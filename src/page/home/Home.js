@@ -1,9 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
+import TodoList from "../../component/home/TodoList";
+import './home.scss';
 
 const Home = () => {
+
+    const [commentToggle, setCommentToggle] = useState(false);
+    const handleTodoOnClick = () => {
+        setCommentToggle(!commentToggle);
+    }
+
     return(
-        <div>
-            home ..
+        <div className='site-wrapper'>
+            <TodoList
+                handleTodoOnClick={handleTodoOnClick}
+            />
         </div>
     )
 }
