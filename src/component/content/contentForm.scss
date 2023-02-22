@@ -55,6 +55,7 @@
         flex-basis: calc(100%);
         text-align: left;
         padding: 2vh 6.3vw;
+
         input {
           line-height: 30px;
           border: 1px solid #dadada;
@@ -64,6 +65,16 @@
           margin-top: 1vw;
           font-size: 1.5rem;
         }
+        .content-form__delBtn {
+          float: right;
+          line-height: 30px;
+          border: 1px solid #dadada;
+          border-radius: 6px;
+          width: 3.5vw;
+          padding: 1vh 1vw;
+          margin: 1vh 2vw;
+          font-size: 1.5rem;
+        }
       }
       button {
         line-height: 30px;
@@ -71,16 +82,17 @@
         border-radius: 6px;
         width: 3.5vw;
         padding: 1vh 1vw;
-        margin: 1vw;
+        margin: 1vh 1vw;
         font-size: 1.5rem;
       }
+
       .content-form__btn {
         line-height: 30px;
         border: 1px solid #dadada;
         border-radius: 6px;
         width: 3.5vw;
         padding: 1vh 1vw;
-        margin: 1vw;
+        margin: 1vh 1vw;
         font-size: 1.5rem;
       }
     }

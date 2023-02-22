@@ -1,4 +1,5 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
+import axios from "axios";
 import DatePicker from "react-datepicker";
 import { Link } from "react-router-dom";
 import { ko } from "date-fns/esm/locale";
@@ -6,29 +7,40 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./contentForm.scss";
 const ContentForm = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const [count, setCount] = useState(0);
-  const [divs, setDivs] = useState([]);
-  const [Contents, setContents] = useState([]);
+  const [endDate, setEndDate] = useState(new Date());
+  const [items, setItems] = useState([0]);
+  const [subject, setSubject] = useState();
 
   const addSubject = (e) => {
-    console.log(e);
+    setSubject(e.target.value);
   };
 
-  const addDiv = () => {
-    setCount(count + 1);
-    setDivs((prevDivs) => [
-      ...prevDivs,
-      <input
-        key={count}
-        type="text"
-        placeholder="해야 할 일을 작성해주세요!!"
-      />,
-    ]);
+  const handleAdd = () => {
+    setItems([...items, { id: items.length }]);
   };
 
-  useEffect(() => {
-    console.log(count);
-  }, [count]);
+  const handleDelete = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
+
+  const handleSave = () => {
+    const data = {
+      subject: subject,
+      startDate: startDate,
+      endDate: endDate,
+      items: items.map((item) => item.value),
+    };
+
+    console.log(data);
+    // axios
+    //   .post("http://localhost:3000/input", data)
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+  };
 
   return (
     <div className="content-form__container">
@@ -48,12 +60,12 @@ const ContentForm = () => {
               <DatePicker
                 locale={ko}
                 selected={startDate}
-                onChange={(date) => setStartDate(date)}
                 showTimeSelect
                 timeFormat="HH:mm"
                 timeIntervals={15}
                 timeCaption="time"
                 dateFormat="yyyy-MM-dd HH:mm"
+                onChange={(date) => setStartDate(date)}
               />
             </div>
             <div className="content-form__endDate">종료일</div>
@@ -61,27 +73,47 @@ const ContentForm = () => {
               <DatePicker
                 locale={ko}
                 selected={startDate}
-                onChange={(date) => setStartDate(date)}
                 showTimeSelect
                 timeFormat="HH:mm"
                 timeIntervals={15}
                 timeCaption="time"
                 dateFormat="yyyy-MM-dd HH:mm"
+                onChange={(date) => setEndDate(date)}
               />
             </div>
           </div>
           <div className="content">
-            <input
-              key={count}
-              type="text"
-              placeholder={"해야 할 일을 작성해주세요!!"}
-            />
-            {divs}
+            {items.map((item) => (
+              <div key={item.id}>
+                <input
+                  key={item.id}
+                  type="text"
+                  placeholder={item.id}
+                  onChange={(e) =>
+                    setItems(
+                      items.map((item) =>
+                        item.id === item.id
+                          ? { id: item.id, value: e.target.value }
+                          : item
+                      )
+                    )
+                  }
+                />
+                <div
+                  className="content-form__delBtn"
+                  onClick={() => handleDelete(item.id)}
+                >
+                  삭제
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="content-form__btn" onClick={addDiv}>
+          <div className="content-form__btn" onClick={handleAdd}>
             추가
           </div>
-          <div className="content-form__btn">저장</div>
+          <div className="content-form__btn" onClick={handleSave}>
+            저장
+          </div>
           <div className="content-form__btn">
             <Link to="/">취소</Link>
           </div>
