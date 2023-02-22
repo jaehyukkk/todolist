@@ -23,6 +23,7 @@ const ContentForm = () => {
     setItems(items.filter((item) => item.id !== id));
   };
 
+  console.log(items);
   const handleSave = () => {
     const data = {
       subject: subject,
@@ -31,15 +32,14 @@ const ContentForm = () => {
       items: items.map((item) => item.value),
     };
 
-    console.log(data);
-    // axios
-    //   .post("http://localhost:3000/input", data)
-    //   .then((response) => {
-    //     console.log(response.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    axios
+      .post("http://localhost:8080/api/v1/input", data)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -91,10 +91,10 @@ const ContentForm = () => {
                   placeholder={item.id}
                   onChange={(e) =>
                     setItems(
-                      items.map((item) =>
-                        item.id === item.id
-                          ? { id: item.id, value: e.target.value }
-                          : item
+                      items.map((i) =>
+                        i.id === item.id
+                          ? { id: i.id, value: e.target.value }
+                          : i
                       )
                     )
                   }
