@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { ko } from "date-fns/esm/locale";
 import "react-datepicker/dist/react-datepicker.css";
 import "./contentForm.scss";
-const ContentForm = () => {
+const ContentDetail = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [items, setItems] = useState([0]);
@@ -122,4 +122,4 @@ const ContentForm = () => {
     </div>
   );
 };
-export default ContentForm;
+export default ContentDetail;
