@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import TodoList from "../../component/home/TodoList";
-import "./home.scss";
+import ContentDetail from "../../component/cotnetDetail/ContentDetail";
 
-const Home = () => {
+const Detail = () => {
   const [commentToggle, setCommentToggle] = useState(false);
   const handleTodoOnClick = () => {
     setCommentToggle(!commentToggle);
@@ -10,9 +9,9 @@ const Home = () => {
 
   return (
     <div className="site-wrapper">
-      <TodoList handleTodoOnClick={handleTodoOnClick} />
+      <ContentDetail />
     </div>
   );
 };
 
-export default Home;
+export default Detail;

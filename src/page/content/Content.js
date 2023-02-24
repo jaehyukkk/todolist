@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import ContentForm from "../../component/content/ContentForm";
-import "./home.scss";
 
-const Home = () => {
+const Content = () => {
   const [commentToggle, setCommentToggle] = useState(false);
   const handleTodoOnClick = () => {
     setCommentToggle(!commentToggle);
@@ -15,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Content;

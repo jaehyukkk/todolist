@@ -1,10 +1,10 @@
-.content-form__container {
-  .content-form__wrapper {
+.content-detail__container {
+  .content-detail__wrapper {
     display: flex;
     justify-content: center;
     padding: 2vh 0;
     width: 100%;
-    .content-form {
+    .content-detail {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -14,7 +14,7 @@
         display: flex;
         height: 6vh;
         width: 30vw;
-        .content-form__subject {
+        .content-detail__subject {
           text-align: center;
           margin: auto;
           line-height: 6vh;
@@ -33,7 +33,7 @@
       }
       .datePicker__wrapper {
         display: flex;
-        .content-form__startDate {
+        .content-detail__startDate {
           text-align: center;
           margin: auto;
           line-height: 6vh;
@@ -41,7 +41,7 @@
           height: 6vh;
           width: 8vw;
         }
-        .content-form__endDate {
+        .content-detail__endDate {
           text-align: center;
           margin: auto;
           line-height: 6vh;
@@ -65,7 +65,7 @@
           margin-top: 1vw;
           font-size: 1.5rem;
         }
-        .content-form__delBtn {
+        .content-detail__delBtn {
           float: right;
           line-height: 30px;
           border: 1px solid #dadada;
@@ -86,7 +86,7 @@
         font-size: 1.5rem;
       }
 
-      .content-form__btn {
+      .content-detail__btn {
         line-height: 30px;
         border: 1px solid #dadada;
         border-radius: 6px;

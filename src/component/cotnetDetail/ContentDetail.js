@@ -4,8 +4,8 @@ import DatePicker from "react-datepicker";
 import { Link } from "react-router-dom";
 import { ko } from "date-fns/esm/locale";
 import "react-datepicker/dist/react-datepicker.css";
-import "./contentForm.scss";
-const ContentForm = () => {
+import "./contentDetail.scss";
+const ContentDetail = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [items, setItems] = useState([0]);
@@ -31,6 +31,7 @@ const ContentForm = () => {
       endDate: endDate,
       items: items.map((item) => item.value),
     };
+
     axios
       .post("http://localhost:8080/api/v1/todo", data)
       .then((response) => {
@@ -42,11 +43,11 @@ const ContentForm = () => {
   };
 
   return (
-    <div className="content-form__container">
-      <div className="content-form__wrapper">
-        <div className="content-form">
+    <div className="content-detail__container">
+      <div className="content-detail__wrapper">
+        <div className="content-detail">
           <div className="subject__wrapper">
-            <div className="content-form__subject">제목</div>
+            <div className="content-detail__subject">제목</div>
             <input
               type="text"
               onChange={addSubject}
@@ -54,7 +55,7 @@ const ContentForm = () => {
             />
           </div>
           <div className="datePicker__wrapper">
-            <div className="content-form__startDate">시작일</div>
+            <div className="content-detail__startDate">시작일</div>
             <div className="start-date-picker">
               <DatePicker
                 locale={ko}
@@ -67,7 +68,7 @@ const ContentForm = () => {
                 onChange={(date) => setStartDate(date)}
               />
             </div>
-            <div className="content-form__endDate">종료일</div>
+            <div className="content-detail__endDate">종료일</div>
             <div className="end-date-picker">
               <DatePicker
                 locale={ko}
@@ -99,7 +100,7 @@ const ContentForm = () => {
                   }
                 />
                 <div
-                  className="content-form__delBtn"
+                  className="content-detail__delBtn"
                   onClick={() => handleDelete(item.id)}
                 >
                   삭제
@@ -107,13 +108,13 @@ const ContentForm = () => {
               </div>
             ))}
           </div>
-          <div className="content-form__btn" onClick={handleAdd}>
+          <div className="content-detail__btn" onClick={handleAdd}>
             추가
           </div>
-          <div className="content-form__btn" onClick={handleSave}>
+          <div className="content-detail__btn" onClick={handleSave}>
             저장
           </div>
-          <div className="content-form__btn">
+          <div className="content-detail__btn">
             <Link to="/">취소</Link>
           </div>
         </div>
@@ -121,4 +122,4 @@ const ContentForm = () => {
     </div>
   );
 };
-export default ContentForm;
+export default ContentDetail;
