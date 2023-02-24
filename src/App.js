@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./page/home/Home";
-import Content from "./component/content/ContentForm";
+import Content from "./page/content/Content";
 import Detail from "./page/detail/Detail";
 
 function App() {

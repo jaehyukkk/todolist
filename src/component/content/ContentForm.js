@@ -31,7 +31,6 @@ const ContentForm = () => {
       endDate: endDate,
       items: items.map((item) => item.value),
     };
-
     axios
       .post("http://localhost:8080/api/v1/todo", data)
       .then((response) => {

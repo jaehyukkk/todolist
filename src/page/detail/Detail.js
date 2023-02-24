@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import ContentDetail from "../../component/content/ContentDetail";
-import "../home/home.scss";
+import ContentDetail from "../../component/cotnetDetail/ContentDetail";
 
 const Detail = () => {
   const [commentToggle, setCommentToggle] = useState(false);
